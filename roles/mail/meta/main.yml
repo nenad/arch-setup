@@ -1,6 +1,0 @@
----
-dependencies:
-  - { role: networkmanager }
-  - { role: systemd }
-  - { role: cron }
-  - { role: firejail }

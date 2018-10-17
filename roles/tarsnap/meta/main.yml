@@ -1,5 +1,0 @@
----
-dependencies:
-  - { role: virtualenv }
-  - { role: networkmanager }
-  - { role: backitup }

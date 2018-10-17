@@ -1,9 +1,0 @@
----
-- name: Install vdirsyncer
-  pacman: name=vdirsyncer state=present
-
-- name: Install khard
-  pacman: name=khard state=present
-
-- name: Install khal
-  pacman: name=khal state=present

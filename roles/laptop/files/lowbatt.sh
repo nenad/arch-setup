@@ -38,7 +38,7 @@ critical() {
 
 # Determine if the system is on battery or AC power.
 get_status() {
-    if [ "$(cat "/sys/class/power_supply/AC/online")" = "1" ]; then
+    if [ "$(cat "/sys/class/power_supply/AC*/online")" = "1" ]; then
         log "System is on AC power"
         # If the AC is online, exit.
         exit

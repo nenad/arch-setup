@@ -1,0 +1,125 @@
+user:
+    name: nenad
+    uid: 1000
+    group: nenad
+    shell: /usr/bin/zsh
+    email: nekk1@live.com
+    log:
+        dir: log
+        rotate: 8
+
+hostname: Q
+
+dotfiles:
+    url: git@github.com:nenadstojanovikj/dotfiles.git
+    destination: dotfiles
+    rcup_flags: -fx README.md
+    ssh_key: /home/{{ user.name }}/.ssh/id_rsa_ansible
+
+aur:
+    dir: aur
+    packages:
+
+ssh:
+    port: 22
+    enable_sshd: False
+
+gnupg:
+    enable_agent: True
+    emulate_ssh: True
+
+network:
+    conn_check:
+        interval: 0
+
+editors:
+    - vim
+
+video_drivers:
+    - xf86-video-intel
+
+base_packages:
+    - base-devel
+    - pacman-contrib
+    - fwupd
+    - git
+    - rsync
+    - glances
+    - coreutils
+    - reflector
+    - moreutils
+    - dateutils
+    - bc
+    - strace
+    - tldr
+    - lsof
+    - sysstat
+    - python-keyring
+    - python-secretstorage
+    - chromium
+    - jq
+
+filesystem_packages:
+    - dosfstools
+    - ntfs-3g
+    - exfat-utils
+
+passwordless_sudo:
+    - /usr/bin/openvpn*
+
+bootloader: refind
+
+bluetooth:
+    disable: True
+
+journal:
+    max_size: 500M
+
+udisks:
+    auto_mount: True
+    shared_mount: True
+
+hostsctl:
+    url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+
+libinput:
+    middle_click_scroll: 12
+    button_mapping: "1 2 3 4 5 6 7 8 9 10 11 2"
+
+display_manager: lightdm
+gdm:
+    sound: False
+    font_scaling_factor: 1
+    logo_path: False
+    touchpad:
+        tap_to_click: True
+    accessibility_menu: True
+
+desktop_environment: i3
+
+base_fonts:
+    - terminus-font
+    - cantarell-fonts
+    - noto-fonts
+    - ttf-dejavu
+    - ttf-liberation
+    - gsfonts
+    - tex-gyre-fonts
+    - ttf-droid
+    - ttf-ubuntu-font-family
+    - ttf-inconsolata
+
+aur_fonts:
+    - ttf-signika
+    - ttf-quintessential
+    - ttf-oswald
+    - ttf-opensans
+    - ttf-merriweather-sans
+    - ttf-merriweather
+    - ttf-carlito
+    - ttf-caladea
+    - ttf-courier-prime
+    - ttf-heuristica
+    - ttf-font-awesome-4
+
+kernel_parameters: "quiet consoleblank=60 i915.enable_psr=2"

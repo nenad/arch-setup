@@ -7,6 +7,7 @@
     - { role: cron, tags: ['cron'] }
     - { role: ssh, tags: ['ssh'] }
     - { role: dotfiles, tags: ['dotfiles'] }
+    - { role: docker, tags: ['docker'] }
     - { role: ssd, tags: ['ssd'] }
     - { role: fonts, tags: ['fonts'] }
     - { role: x, tags: ['x'] }
@@ -32,6 +33,3 @@
     - { role: bluetooth, tags: ['bluetooth'], when: "bluetooth is defined" }
     - { role: hostsctl, tags: ['hostsctl'], when: "hostsctl is defined" }
     - { role: networkmanager, tags: ['networkmanager'] }
-  vars_prompt:
-    - name: user_password
-      prompt: "Enter desired user password"

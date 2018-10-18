@@ -4,6 +4,11 @@ user:
     group: nenad
     shell: /usr/bin/zsh
     email: nekk1@live.com
+    groups:
+      - video
+      - audio
+      - lp
+      - wheel
 
 hostname: Q
 
@@ -58,6 +63,7 @@ base_packages:
     - chromium
     - jq
     - code
+    - keychain
 
 filesystem_packages:
     - dosfstools

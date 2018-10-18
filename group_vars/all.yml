@@ -4,21 +4,25 @@ user:
     group: nenad
     shell: /usr/bin/zsh
     email: nekk1@live.com
-    log:
-        dir: log
-        rotate: 8
+    groups:
+      - video
+      - audio
+      - lp
+      - wheel
 
 hostname: Q
 
 dotfiles:
     url: git@github.com:nenadstojanovikj/dotfiles.git
-    destination: dotfiles
+    destination: .dotfiles
     rcup_flags: -fx README.md
     ssh_key: /home/{{ user.name }}/.ssh/id_rsa_ansible
 
 aur:
     dir: aur
     packages:
+      - rofi-greenclip
+      - dropbox
 
 ssh:
     port: 22
@@ -58,6 +62,8 @@ base_packages:
     - python-secretstorage
     - chromium
     - jq
+    - code
+    - keychain
 
 filesystem_packages:
     - dosfstools
